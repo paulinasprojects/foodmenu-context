@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     url: "crusted-chicken",
-    name: "Dill Crusted Chicken & Cheddar Broccoli “Grits”",
+    name: "Crusted Chicken & Cheddar Broccoli “Grits”",
     price: 17.99,
     description:
       "A savory dill, Parmesan, and almond flour coating creates a deliciously crispy crust on juicy brined chicken breasts.",
@@ -40,7 +40,7 @@ export const products = [
     price: 14.99,
     description:
       "This delectable meal features ground turkey that's seasoned with smoked paprika and chili powder and simmered with crushed tomatoes.",
-    image: "/assets/ground-turkey.avic",
+    image: "/assets/ground-turkey.avif",
     rating: 4,
     reviews: [
       {

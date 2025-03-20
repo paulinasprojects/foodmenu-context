@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-black;
+    @apply bg-[#f1f1eb] text-black;
   }
 
   button {
