@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
