@@ -62,7 +62,7 @@ export const HomePage = () => {
               ))
             }
             </div>
-                <p className="font-bold">{product.price}</p>
+                <p className="font-bold">${product.price}</p>
               </div>
 
               <button onClick={() => addToCart(product.id)} className="flex items-center justify-center gap-x-4 bg-white px-4 py-2 rounded-sm text-lg hover:bg-black hover:text-white hover:transition-colors hover:duration-500">
