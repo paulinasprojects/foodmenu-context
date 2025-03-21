@@ -1,16 +1,5 @@
 import { Star } from "lucide-react";
-
-interface Review {
-  id: number;
-  user: string;
-  rating: number;
-  comment: string;
-  date: string;
-}
-
-interface ReviewsProps {
-  reviews: Review[];
-}
+import { ReviewsProps } from "../lib/types";
 
 export const Reviews = ({reviews}: ReviewsProps) => {
   return (

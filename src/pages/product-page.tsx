@@ -1,62 +1,19 @@
 import { ArrowRight, Minus, Plus, ShoppingCart, Star } from "lucide-react"
 import { Link, useParams } from "react-router-dom"
-import { useState } from "react";
 import { products } from "../lib/products";
 import { Reviews } from "../components/reviews";
+import { useCart } from "../context/cart-context";
 
-type CartItem = {
-  productId: number;
-  quantity: number;
-}
 
 export const ProductPage = () => {
     const { url } = useParams();
-    const [cartNumber, setCartNumber] = useState<CartItem[]>([]);
-  
-    const productCount = cartNumber.reduce((sum, product) =>  sum + product.quantity, 0);
+    const {addToCart, removeFromCart, getProductQuantity} = useCart();
     const product = products.find((item) => item.url === url)!;
-  
-    const addToCart = (productId: number) => {
-      setCartNumber(cartNumber.some((item) => item.productId === productId) ? cartNumber.map((item) => (
-        item.productId === productId ? {...item, quantity: item.quantity + 1} : item
-      )) : [...cartNumber, { productId, quantity: 1 }])
-    };
-
-    const removeFromCart  = (productId: number) => {
-      setCartNumber((currentCart) => currentCart.map((item) => item.productId === productId ? {...item, quantity: item.quantity - 1} : item))
-    }
-
-    const getProductQuantity = (productId: number) => {
-      return cartNumber.find((item) => item.productId === productId)?.quantity || 0
-    }
 
     const quantity = getProductQuantity(product.id);
     
-
-
   return (
     <>
-         <header className="bg-white shadow-md p-6 sticky top-0 z-50 backdrop-blur-md">
-        <nav>
-          <ul className="flex items-center justify-between">
-            <li>
-              <Link to="/" className="text-2xl">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/cart" className="flex gap-x-2">
-                <ShoppingCart/>
-                 {productCount > 0 && (
-                   <span className="bg-black text-white text-lg rounded-full w-7 h-7 flex items-center justify-center">
-                    {productCount}
-                   </span>
-                 )}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
       <section className="flex flex-col gap-4 mt-5">
         <h2 className="text-3xl">{product.name}</h2>
         <div className="flex gap-x-8 items-center">
