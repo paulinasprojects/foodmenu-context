@@ -18,9 +18,9 @@ export const HomePage = () => {
           {products.map((product) => (
             <div key={product.id} className="flex flex-col gap-y-6 pl-4">
               <Link to={`/${product.url}`}>
-              <figure className="h-96">
+              <div className="h-96">
                 <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
-              </figure>
+              </div>
               </Link>
               <div className="space-x-2">
                 <h3 className="text-xl text-black">{product.name}</h3>

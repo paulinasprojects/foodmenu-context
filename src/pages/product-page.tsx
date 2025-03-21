@@ -30,9 +30,7 @@ export const ProductPage = () => {
             </span>
         </div>
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <figure>
             <img src={product.image} alt={product.name} className="rounded-sm" />
-          </figure>
 
           <div className="flex flex-col gap-4">
             <p className="text-xl">{product.description}</p>

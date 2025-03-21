@@ -15,7 +15,7 @@ export type ReviewsProps = {
   reviews: Review[];
 };
 
-export type CartProduct = {
+export type Product = {
   id: number;
   url: string;
   name: string;
@@ -26,12 +26,16 @@ export type CartProduct = {
   reviews: Review[];
 };
 
+export interface CartProduct extends Product {
+  quantity: number;
+}
+
 export type CartContextType = {
   cart: CartItem[];
   addToCart: (productId: number) => void;
   removeFromCart: (productId: number) => void;
-  // deleteFromCart: (productId: number) => void;
+  deleteFromCart: (productId: number) => void;
   getProductQuantity: (productId: number) => number;
-  // cartTotal: number;
-  // cartProducts: CartProduct[];
+  cartTotal: number;
+  cartProducts: CartProduct[];
 };
